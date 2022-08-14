@@ -1,0 +1,43 @@
+{% extends 'book/base.html' %}
+{% block content %}
+<section class="banner-area relative">
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+                <h1 class="text-white">
+                    Про автора
+                </h1>
+                <div class="link-nav">
+						<span class="box">
+							<a href="{% url 'home' %}">Головна сторінка</a>
+							<i class="lnr lnr-arrow-right"></i>
+							<a href="{% url 'about_book' %}">Про автора</a>
+						</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rocket-img">
+        <img src="img/rocket.png" alt="">
+    </div>
+</section>
+<!-- End Banner Area -->
+<!-- Start Sample Area -->
+<section class="sample-text-area">
+    <div class="container">
+        <hr>
+        <p class="sample-text"><h4><b>{{title}}</b></h4></p>
+        <hr>
+        <p class="sample-text">Адітья Бхаргава - інженер-програміст, має дві освіти - у сфері комп'ютерних технологій і
+            сфері витончених мистецтв. Зі слів самого Адітьї, він займеється програмуванням і малюванням два останніх
+            десятиріччя. Почав програмувати зі створення відеоігр на Basic і ActionScript. Продав першу гру, коли йому
+            було всього 14 років.</p>
+        <p class="sample-text">Адітья Бхаргава працює програмістом в Etsy, інтернет-ринку авторських робіт. Він здобув
+            ступінь магістра з інформатики в Чиказькому університеті і веде популярний ілюстрований технічний блог <a
+                    href="https://adit.io/">adit.io</a>
+        </p>
+        <p class="sample-text">Останнім часом Бхаргава займається викладанням, веде курс "Введення в Python" в
+            Noisebridge. Активно розвиває свої соцмережі, спілкуючись з аудиторією про програмування простою мовою.</p>
+    </div>
+</section>
+{% endblock %}

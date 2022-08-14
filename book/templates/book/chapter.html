@@ -1,0 +1,37 @@
+{% extends 'book/base.html' %}
+{% block content %}
+<section class="banner-area relative">
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+                <h1 class="text-white">
+                    {{chapter.title}}.
+                </h1>
+                <p>{{chapter.description}}.</p>
+                <div class="link-nav">
+						<span class="box">
+							<a href="{% url 'home' %}">Головна сторінка</a>
+							<i class="lnr lnr-arrow-right"></i>
+							<a href="{{ chapter.get_absolute_url }}">{{chapter.title}}</a>
+						</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rocket-img">
+        <img src="img/rocket.png" alt="">
+    </div>
+</section>
+<!-- End Banner Area -->
+<!-- Start Sample Area -->
+<section class="sample-text-area">
+    <div class="container">
+        <hr>
+        <h4 class="sample-text">{{chapter.id}}. {{chapter.description}}.</h4>
+        <hr>
+        {% autoescape off %}
+        {{ chapter.text }}
+        {% endautoescape %}
+    </div>
+</section>
+{% endblock %}

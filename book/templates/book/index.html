@@ -1,0 +1,158 @@
+{% extends 'book/base.html' %}
+{% load static %}
+{% block content %}
+<section class="home-banner-area relative">
+    <div class="container">
+        <div class="row fullscreen d-flex align-items-center justify-content-center">
+            <div class="banner-content col-lg-8 col-md-12">
+                <h1 class="wow fadeIn" data-wow-duration="4s">Грокаємо алгоритми</h1>
+                <p class="text-black">
+                    Ілюстрований посібник для програмістів та тих, хто цікавиться
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="rocket-img">
+        <img src="{% static 'book/img/rocket.png' %}" alt="">
+    </div>
+</section>
+<section class="courses-area section-gap">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 about-right">
+                <h1>
+                    Грокаємо алгоритми
+                </h1>
+                <div class="wow fadeIn" data-wow-duration="1s">
+                    <p>
+                        Ілюстрована книга автора Адітья Бхаргава. Переклад українською аматорський і не претендує на
+                        ідеальний.
+                    </p>
+                </div>
+            </div>
+            <div class="offset-lg-1 col-lg-6">
+                <div class="courses-right">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <ul class="courses-list">
+                                {% for c in chapters %}
+                                {% if c.id < 7 %}
+                                <li>
+                                    <a class="wow fadeInLeft" href="{{c.get_absolute_url}}" data-wow-duration="1s"
+                                       data-wow-delay=".1s">
+                                        <i class="fa fa-book"></i> {{c.title}}
+                                    </a>
+                                </li>
+                                {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <ul class="courses-list">
+                                {% for c in chapters %}
+                                {% if c.id > 6%}
+                                <li>
+                                    <a class="wow fadeInRight" href="{{c.get_absolute_url}}" data-wow-duration="1s"
+                                       data-wow-delay="1.3s">
+                                        <i class="fa fa-book"></i> {{c.title}}
+                                    </a>
+                                </li>
+                                {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="feature-area">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-title text-center">
+                    <h1>Алгоритми, які розглянуті в цій книзі</h1>
+                </div>
+            </div>
+        </div>
+        <div class="feature-inner row">
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-item">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <h4>Бінарний пошук</h4>
+                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-item">
+                    <i class="fa-solid fa-filter"></i>
+                    <h4>Сортування вибором</h4>
+                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-item">
+                    <i class="fa-solid fa-spinner"></i>
+                    <h4>Рекурсія</h4>
+                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-item">
+                    <i class="fa-solid fa-filter"></i>
+                    <h4>Швидке сортування</h4>
+                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-item">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <h4>Пошук в ширину</h4>
+                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-item">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <h4>Алгоритм дейкстри</h4>
+                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-item">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <h4>Жадібні алгоритми</h4>
+                    <br>
+                    <br>
+                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-item">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <h4>Алгоритм k-найближчих сусідів</h4>
+                    <br>
+                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-item">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <h4>Короткий огляд ще 10 алгоритмів, які не були розглянуті в книзі</h4>
+                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

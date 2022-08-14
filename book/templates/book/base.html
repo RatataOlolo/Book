@@ -1,0 +1,92 @@
+{% load static %}
+{% load book_tags %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{title}}</title>
+    <link rel="shortcut icon" href="{% static 'book/img/favicon.ico' %}" type="image/x-icon"/>
+    <!--Google Font ============================================= -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500i" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="{% static 'book/css/linearicons.css'%}">
+    <link rel="stylesheet" href="{% static 'book/css/bootstrap.css'%} ">
+    <link rel="stylesheet" href="{% static 'book/css/magnific-popup.css'%}">
+    <link rel="stylesheet" href="{% static 'book/css/nice-select.css'%}">
+    <link rel="stylesheet" href="{% static 'book/css/animate.min.css'%}">
+    <link rel="stylesheet" href="{% static 'book/css/owl.carousel.css'%}">
+    <link rel="stylesheet" href="{% static 'book/css/main.css'%}">
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="{% static 'book/css/font-awesome.min.css' %}"/>
+    <script src="https://kit.fontawesome.com/4dffe4967e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<header id="header">
+    <div class="container">
+        <div class="row align-items-center justify-content-between d-flex">
+            <div id="logo">
+                <a href="{% url 'home' %}"><img src="{% static 'book/img/log.png' %}" alt=""></a>
+            </div>
+            <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                    <li class="menu-active"><a href="{% url 'home' %}">Головна</a></li>
+                    <li><a href="{% url 'about_book' %}">Про книгу</a></li>
+                    <li><a href="{% url 'about_author' %}">Про автора</a></li>
+                    <li class="menu-has-children"><a href="{% url 'chapters' %}">Глави</a>
+                        <ul>
+                            {% for c in chapters %}
+                            <li><a href="{{ c.get_absolute_url }}">{{c.title}}. {{c.description}}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    <li class="menu-has-children"><a href="{% url 'answers' %}">Відповіді на вправи</a>
+                    </li>
+                    <li><a href="{% url 'about_translation' %}">Про переклад</a></li>
+                </ul>
+            </nav><!-- #nav-menu-container -->
+        </div>
+    </div>
+</header>
+{% block content %}
+{% endblock %}
+<footer class="footer-area section-gap">
+    <div class="container">
+        <div class="footer-bottom row align-items-center">
+            <p class="footer-text m-0 col-lg-12 col-md-12">
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                Читайте з задоволенням | by ratataololo <i style="color:red" class="fa fa-heart-o"
+                                                           aria-hidden="true"></i>
+            </p>
+        </div>
+    </div>
+</footer>
+<script src="{% static 'book/js/vendor/jquery-2.2.4.min.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="{% static 'book/js/vendor/bootstrap.min.js' %}"></script>
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+<script src="{% static 'book/js/easing.min.js' %}"></script>
+<script src="{% static 'book/js/hoverIntent.js' %}"></script>
+<script src="{% static 'book/js/superfish.min.js' %}"></script>
+<script src="{% static 'book/js/jquery.ajaxchimp.min.js' %}"></script>
+<script src="{% static 'book/js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'book/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'book/js/owl-carousel-thumb.min.js' %}"></script>
+<script src="{% static 'book/js/jquery.sticky.js' %}"></script>
+<script src="{% static 'book/js/jquery.nice-select.min.js' %}"></script>
+<script src="{% static 'book/js/parallax.min.js' %}"></script>
+<script src="{% static 'book/js/waypoints.min.js' %}"></script>
+<script src="{% static 'book/js/wow.min.js' %}"></script>
+<script src="{% static 'book/js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'book/js/mail-script.js' %}"></script>
+<script src="{% static 'book/js/main.js' %}"></script>
+</body>
+</html>
