@@ -7,7 +7,7 @@ env.bak/
 venv.bak/
 static
 /.idea/
-/donpoda/migrations/
+/book/migrations/
 
 ### Django ###
 *.log
